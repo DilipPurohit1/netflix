@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Netflix - Profile</title>
+
+<link rel="stylesheet" href="profile.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+<div class="left">
+
+<a href="browse.html" class="logo">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" alt="Netflix">
+
+</a>
+
+<ul>
+
+<li>
+<a href="browse.html">Home</a>
+</li>
+
+<li>TV Shows</li>
+
+<li>Movies</li>
+
+<li>New & Popular</li>
+
+<li>
+<a href="mylist.html">My List</a>
+</li>
+
+</ul>
+
+</div>
+
+<div class="right">
+
+<div class="search-box">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+type="text"
+placeholder="Search">
+
+</div>
+
+<i class="fa-regular fa-bell notification"></i>
+
+<div class="profile-menu-box">
+
+<img
+
+id="profileIcon"
+src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
+alt="Profile">
+
+<div class="dropdown" id="dropdownMenu">
+
+<a href="browse.html">
+
+<i class="fa-solid fa-house"></i>
+
+Home
+
+</a>
+
+<a href="mylist.html">
+
+<i class="fa-solid fa-heart"></i>
+
+My List
+
+</a>
+
+<a href="#" id="logout">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Sign Out
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</nav>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero">
+
+<img
+class="hero-bg"
+src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?w=1800&auto=format&fit=crop">
+
+<div class="overlay"></div>
+
+<div class="hero-content">
+
+<h1>My Profile</h1>
+
+<p>
+
+Manage your Netflix profile, personal details and preferences.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<!-- ================= PROFILE CARD ================= -->
+
+<section class="profile-section">
+
+<div class="profile-card">
+
+<div class="avatar">
+
+<img
+
+id="avatar"
+
+src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
+
+alt="Avatar">
+
+<label for="uploadAvatar" class="camera">
+
+<i class="fa-solid fa-camera"></i>
+
+</label>
+
+<input
+type="file"
+id="uploadAvatar"
+hidden>
+
+</div>
+
+
+
+<div class="user-info">
+
+<h2 id="userName">
+
+Netflix User
+
+</h2>
+
+<p id="userEmail">
+
+user@email.com
+
+</p>
+
+<div class="buttons">
+
+<button id="editProfile">
+
+<i class="fa-solid fa-pen"></i>
+
+Edit Profile
+
+</button>
+
+<button id="saveProfile">
+
+<i class="fa-solid fa-floppy-disk"></i>
+
+Save
+
+</button>
+
+</div>
+
+</div>
+
+</div>
+<!-- ================= ACCOUNT DETAILS ================= -->
+
+<div class="info-container">
+
+    <div class="info-card">
+
+        <h3>
+            <i class="fa-solid fa-user"></i>
+            Account Information
+        </h3>
+
+        <div class="info-row">
+            <span>Full Name</span>
+            <input type="text" id="fullName" value="Netflix User">
+        </div>
+
+        <div class="info-row">
+            <span>Email</span>
+            <input type="email" id="email" value="user@email.com">
+        </div>
+
+        <div class="info-row">
+            <span>Phone</span>
+            <input type="text" value="+91 9876543210">
+        </div>
+
+        <div class="info-row">
+            <span>Country</span>
+            <input type="text" value="India">
+        </div>
+
+    </div>
+
+
+
+    <!-- Membership -->
+
+    <div class="info-card">
+
+        <h3>
+            <i class="fa-solid fa-crown"></i>
+            Membership
+        </h3>
+
+        <div class="membership">
+
+            <h2>Premium Plan</h2>
+
+            <p>Ultra HD • 4 Screens</p>
+
+            <button>
+                Manage Plan
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Statistics -->
+
+    <div class="info-card">
+
+        <h3>
+            <i class="fa-solid fa-chart-simple"></i>
+            Your Statistics
+        </h3>
+
+        <div class="stats">
+
+            <div class="stat">
+
+                <h2>145</h2>
+
+                <p>Movies Watched</p>
+
+            </div>
+
+            <div class="stat">
+
+                <h2>39</h2>
+
+                <p>TV Shows</p>
+
+            </div>
+
+            <div class="stat">
+
+                <h2>275h</h2>
+
+                <p>Watch Time</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Favourite Genres -->
+
+    <div class="info-card">
+
+        <h3>
+            <i class="fa-solid fa-film"></i>
+            Favourite Genres
+        </h3>
+
+        <div class="genres">
+
+            <span>Action</span>
+
+            <span>Comedy</span>
+
+            <span>Sci-Fi</span>
+
+            <span>Adventure</span>
+
+            <span>Thriller</span>
+
+            <span>Crime</span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Continue Watching -->
+
+    <div class="info-card">
+
+        <h3>
+            <i class="fa-solid fa-play"></i>
+            Continue Watching
+        </h3>
+
+        <div class="continue-list">
+
+            <div class="continue-item">
+
+                <img src="https://image.tmdb.org/t/p/w500/9PFonBhy4cQy7Jz20NpMygczOkv.jpg">
+
+                <div>
+
+                    <h4>Wednesday</h4>
+
+                    <p>Episode 6 • 80% watched</p>
+
+                </div>
+
+            </div>
+
+            <div class="continue-item">
+
+                <img src="https://image.tmdb.org/t/p/w500/49WJfeN0moxb9IPfGn8AIqMGskD.jpg">
+
+                <div>
+
+                    <h4>Stranger Things</h4>
+
+                    <p>Episode 8 • 55% watched</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Security -->
+
+    <div class="info-card">
+
+        <h3>
+            <i class="fa-solid fa-shield-halved"></i>
+            Security
+        </h3>
+
+        <button>
+            Change Password
+        </button>
+
+        <button>
+            Enable Two-Factor Authentication
+        </button>
+
+        <button class="danger">
+            Delete Account
+        </button>
+
+    </div>
+
+</div>
+<!-- ================= RECENTLY WATCHED ================= -->
+
+<section class="recent-section">
+
+    <h2>Recently Watched</h2>
+
+    <div class="recent-grid">
+
+        <div class="recent-card">
+
+            <img src="https://image.tmdb.org/t/p/w500/9PFonBhy4cQy7Jz20NpMygczOkv.jpg" alt="Wednesday">
+
+            <h4>Wednesday</h4>
+
+        </div>
+
+        <div class="recent-card">
+
+            <img src="https://image.tmdb.org/t/p/w500/49WJfeN0moxb9IPfGn8AIqMGskD.jpg" alt="Stranger Things">
+
+            <h4>Stranger Things</h4>
+
+        </div>
+
+        <div class="recent-card">
+
+            <img src="https://image.tmdb.org/t/p/w500/reEMJA1uzscCbkpeRJeTT2bjqUp.jpg" alt="Money Heist">
+
+            <h4>Money Heist</h4>
+
+        </div>
+
+        <div class="recent-card">
+
+            <img src="https://image.tmdb.org/t/p/w500/7gKI9hpEMcZUQpNgKrkDzJpbnNS.jpg" alt="Extraction 2">
+
+            <h4>Extraction 2</h4>
+
+        </div>
+
+        <div class="recent-card">
+
+            <img src="https://image.tmdb.org/t/p/w500/7vjaCdMw15FEbXyLQTVa04URsPm.jpg" alt="The Witcher">
+
+            <h4>The Witcher</h4>
+
+        </div>
+
+        <div class="recent-card">
+
+            <img src="https://image.tmdb.org/t/p/w500/apbrbWs8M9lyOpJYU5WXrpFbk1Z.jpg" alt="Dark">
+
+            <h4>Dark</h4>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-links">
+
+        <a href="#">FAQ</a>
+
+        <a href="#">Help Centre</a>
+
+        <a href="#">Terms of Use</a>
+
+        <a href="#">Privacy</a>
+
+        <a href="#">Cookie Preferences</a>
+
+        <a href="#">Corporate Information</a>
+
+        <a href="#">Contact Us</a>
+
+        <a href="browse.html">Home</a>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>Netflix Clone &copy; 2026 | Created for Educational Purpose</p>
+
+    </div>
+
+</footer>
+
+
+
+<script src="profile.js"></script>
+
+</body>
+</html>

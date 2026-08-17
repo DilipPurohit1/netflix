@@ -1,0 +1,112 @@
+/* Background */
+.auth-page{
+    margin:0;
+    padding:0;
+    font-family:Arial, Helvetica, sans-serif;
+    background:
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+    url("hero-bg.jpg") center
+    center/cover no-repeat;
+    height:100vh;
+}
+
+/* Netflix Logo */
+.auth-logo{
+    position: absolute;
+    top: 20px;
+    left: 40px;
+    display: inline-block;
+}
+
+.auth-logo img{
+    width: 170px;
+    height: auto;
+    display: block;
+}
+
+/* Login/Signup Box */
+.login-box{
+    width:360px;
+    background:rgba(0,0,0,0.78);
+    margin:90px auto;
+    padding:50px 60px;
+    border-radius:5px;
+}
+
+.login-box h1{
+    color:#fff;
+    margin-bottom:30px;
+    font-size:32px;
+}
+
+/* Form */
+.login-box form{
+    display:flex;
+    flex-direction:column;
+}
+
+/* Inputs */
+.login-box input{
+    background:#333;
+    border:none;
+    outline:none;
+    color:#fff;
+    padding:16px;
+    margin-bottom:18px;
+    border-radius:5px;
+    font-size:16px;
+}
+
+.login-box input::placeholder{
+    color:#b3b3b3;
+}
+
+/* Button */
+.login-box button{
+    background:#e50914;
+    color:#fff;
+    border:none;
+    padding:16px;
+    font-size:17px;
+    font-weight:bold;
+    border-radius:5px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.login-box button:hover{
+    background:#c11119;
+}
+
+/* Bottom Text */
+.signup{
+    margin-top:25px;
+    color:#737373;
+    text-align:center;
+    font-size:15px;
+}
+
+.signup a{
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+}
+
+.signup a:hover{
+    text-decoration:underline;
+}
+
+/* Responsive */
+@media(max-width:600px){
+
+    .login-box{
+        width:90%;
+        padding:35px 25px;
+    }
+
+    .auth-logo{
+        left:20px;
+        font-size:30px;
+    }
+
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body class="auth-page">
+
+   <a href="index.html" class="auth-logo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png"
+         alt="Netflix Logo">
+</a>
+
+    <div class="login-box">
+
+        <h1>Sign Up</h1>
+
+        <form onsubmit="registerUser(event)">
+
+            <input
+                type="text"
+                id="signupName"
+                placeholder="Full Name"
+                required
+            >
+
+            <input
+                type="text"
+                id="signupEmail"
+                placeholder="Email or mobile number"
+                required
+>
+            >
+
+            <input
+                type="password"
+                id="signupPassword"
+                placeholder="Password"
+                minlength="6"
+                required
+            >
+
+            <input
+                type="password"
+                id="confirmPassword"
+                placeholder="Confirm Password"
+                minlength="6"
+                required
+            >
+
+            <button type="submit">
+                Sign Up
+            </button>
+
+            <div class="signup">
+                <span>Already have an account? </span>
+                <a href="login.html">Sign In</a>
+            </div>
+
+        </form>
+
+    </div>
+
+    <script src="signup.js"></script>
+
+</body>
+
+</html>

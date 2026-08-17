@@ -1,0 +1,1605 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Netflix - Home</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet"
+          href="browse.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+
+<body>
+
+
+<!-- ==========================================================
+     NAVBAR
+========================================================== -->
+
+<header class="navbar">
+
+    <div class="nav-left">
+
+        <!-- Netflix Logo -->
+
+        <a href="browse.html"
+           class="logo">
+
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png"
+                alt="Netflix Logo">
+
+        </a>
+
+
+        <!-- Navigation -->
+
+        <nav class="nav-links">
+
+            <a href="browse.html"
+               class="active">
+                Home
+            </a>
+
+            <a href="#shows">
+                Shows
+            </a>
+
+            <a href="#movies">
+                Movies
+            </a>
+
+            <a href="#games">
+                Games
+            </a>
+
+            <a href="#new">
+                New & Popular
+            </a>
+
+            <a href="mylist.html">
+                My List
+            </a>
+
+            <a href="#languages">
+                Browse by Languages
+            </a>
+
+        </nav>
+
+    </div>
+
+
+    <!-- Right Navbar -->
+
+    <div class="nav-right">
+
+
+        <!-- Search -->
+
+        <div class="search-container"
+             id="searchContainer">
+
+            <button class="search-button"
+                    onclick="toggleSearch()">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+            </button>
+
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="Search movies and shows">
+
+        </div>
+
+
+        <!-- Notification -->
+
+        <div class="notification">
+
+            <i class="fa-regular fa-bell"></i>
+
+            <span>8</span>
+
+        </div>
+
+
+        <!-- Kids -->
+
+        <div class="kids-profile">
+
+            <span class="kids-label">
+                Kids
+            </span>
+
+            <span>
+                Children
+            </span>
+
+        </div>
+
+
+        <!-- Profile -->
+
+        <div class="profile-wrapper">
+
+            <button class="profile-button"
+                    onclick="toggleProfile()">
+
+                <img
+                    src="https://i.pravatar.cc/100?img=12"
+                    alt="Profile">
+
+                <i class="fa-solid fa-caret-down"></i>
+
+            </button>
+
+
+            <!-- Profile Menu -->
+
+            <div class="profile-menu"
+                 id="profileMenu">
+
+                <div class="profile-user">
+
+                    <img
+                        src="https://i.pravatar.cc/100?img=12"
+                        alt="User">
+
+                    <div>
+
+                        <strong id="profileName">
+                            User
+                        </strong>
+
+                        <small>
+                            Viewer
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <hr>
+
+
+                <a href="profile.html">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    Profile
+
+                </a>
+
+
+                <a href="mylist.html">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    My List
+
+                </a>
+
+
+                <a href="#">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                    Settings
+
+                </a>
+
+
+                <hr>
+
+
+                <button onclick="logoutUser()">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                    Sign out
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ==========================================================
+     HERO
+========================================================== -->
+
+<section class="hero">
+
+
+    <!-- Background Trailer -->
+
+    <div class="hero-video-container">
+
+        <iframe
+            id="heroVideo"
+            src="https://www.youtube.com/embed/ncn84cMWgRA?autoplay=1&mute=1&controls=0&loop=1&playlist=ncn84cMWgRA&modestbranding=1&rel=0"
+            title="Netflix Trailer"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+
+    <!-- Dark overlay -->
+
+    <div class="hero-overlay"></div>
+
+
+    <!-- Hero Content -->
+
+    <div class="hero-content">
+
+        <div class="netflix-n">
+            N
+        </div>
+
+
+        <span class="hero-label"
+              id="heroLabel">
+
+            NETFLIX ORIGINAL
+
+        </span>
+
+
+        <h1 id="heroTitle">
+
+            STRANGER THINGS
+
+        </h1>
+
+
+        <div class="hero-meta">
+
+            <span id="heroYear">
+                2016
+            </span>
+
+            <span>
+                16+
+            </span>
+
+            <span id="heroSeasons">
+                5 Seasons
+            </span>
+
+            <span>
+                4K
+            </span>
+
+        </div>
+
+
+        <p id="heroDescription">
+
+            When a young boy vanishes, a small town uncovers a mystery
+            involving secret experiments, terrifying supernatural forces
+            and one strange little girl.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+
+            <!-- Play -->
+
+            <button class="play-button"
+                    onclick="openTrailer()">
+
+                <i class="fa-solid fa-play"></i>
+
+                Play
+
+            </button>
+
+
+            <!-- More Info -->
+
+            <button class="info-button"
+                    onclick="showMovieInfo()">
+
+                <i class="fa-solid fa-circle-info"></i>
+
+                More Info
+
+            </button>
+
+
+            <!-- My List -->
+
+            <button class="list-button"
+                    id="heroListButton"
+                    onclick="addCurrentToList()">
+
+                <i class="fa-solid fa-plus"
+                   id="heroListIcon"></i>
+
+                <span id="heroListText">
+                    My List
+                </span>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- Mute -->
+
+    <button class="mute-button"
+            id="muteButton"
+            onclick="toggleMute()">
+
+        <i class="fa-solid fa-volume-xmark"></i>
+
+    </button>
+
+
+    <!-- Hero badges -->
+
+    <div class="hero-badges">
+
+        <span>
+
+            <i class="fa-solid fa-bullhorn"></i>
+
+            Recently added
+
+        </span>
+
+
+        <span>
+
+            <strong>
+                TOP 10
+            </strong>
+
+            #1 in Shows
+
+        </span>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     YOUR NEXT WATCH
+========================================================== -->
+
+<section class="content-section"
+         id="shows">
+
+
+    <div class="section-header">
+
+        <h2>
+            Your Next Watch
+        </h2>
+
+
+        <div class="section-controls">
+
+            <button onclick="scrollRow('nextWatch', -650)">
+
+                <i class="fa-solid fa-chevron-left"></i>
+
+            </button>
+
+
+            <button onclick="scrollRow('nextWatch', 650)">
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="poster-row"
+         id="nextWatch">
+
+
+        <!-- Stranger Things -->
+
+        <article
+            class="wide-card movie-item"
+            data-title="Stranger Things"
+            onclick="selectMovie('stranger')">
+
+            <img
+                src="https://image.tmdb.org/t/p/w780/oaGvjB0DvdhXhOAuADfHb261ZHa.jpg"
+                alt="Stranger Things">
+
+        </article>
+
+
+
+        <!-- Squid Game -->
+
+        <article
+            class="wide-card movie-item"
+            data-title="Squid Game"
+            onclick="selectMovie('squidgame')">
+
+            <img
+                src="https://image.tmdb.org/t/p/w780/2meX1nMdScFOoV4370rqHWKmXhY.jpg"
+                alt="Squid Game">
+
+            <div class="card-badge">
+                Recently added
+            </div>
+
+        </article>
+
+
+
+        <!-- Vikings -->
+
+        <article
+            class="wide-card movie-item"
+            data-title="Vikings"
+            onclick="selectMovie('vikings')">
+
+            <img
+    src="https://i.pinimg.com/originals/ad/64/26/ad64268ddb9b2a5dca486a141c18cd65.jpg"
+    alt="Vikings">
+
+        </article>
+
+
+
+        <!-- One Piece -->
+
+        <article
+            class="wide-card movie-item"
+            data-title="One Piece"
+            onclick="selectMovie('onepiece')">
+
+            <img
+                src="https://image.tmdb.org/t/p/w780/a6ptrTUH1c5OdWanjyYtAkOuYD0.jpg"
+                alt="One Piece">
+
+        </article>
+
+
+
+        <!-- Money Heist -->
+
+        <article
+            class="wide-card movie-item"
+            data-title="Money Heist"
+            onclick="selectMovie('moneyheist')">
+
+            <img
+                src="https://image.tmdb.org/t/p/w780/xGexTKCJDkl12dTW4YCBDXWb1AD.jpg"
+                alt="Money Heist">
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     TOP 10 MOVIES
+========================================================== -->
+
+<section class="content-section"
+         id="movies">
+
+
+    <div class="section-header">
+
+        <h2>
+            Top 10 Movies in India Today
+        </h2>
+
+
+        <div class="section-controls">
+
+            <button onclick="scrollRow('topMovies', -700)">
+
+                <i class="fa-solid fa-chevron-left"></i>
+
+            </button>
+
+
+            <button onclick="scrollRow('topMovies', 700)">
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="top-ten-row"
+         id="topMovies">
+
+
+        <!-- #1 Spider-Man -->
+
+        <article
+            class="top-ten-card"
+            onclick="selectMovie('spiderman')">
+
+            <span class="big-number">
+                1
+            </span>
+
+
+            <div class="number-poster">
+
+                <img
+                    src="https://image.tmdb.org/t/p/w500/4q2NNj4S5dG2RLF9CpXsej7yXl.jpg"
+                    alt="Spider-Man Far From Home">
+
+                <span class="recent-badge">
+                    Popular
+                </span>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- #2 Interstellar -->
+
+        <article
+            class="top-ten-card"
+            onclick="selectMovie('interstellar')">
+
+            <span class="big-number">
+                2
+            </span>
+
+
+            <div class="number-poster">
+
+                <img
+                    src="https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg"
+                    alt="Interstellar">
+
+                <span class="recent-badge">
+                    Popular
+                </span>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- #3 Uncharted -->
+
+       <article
+    class="wide-card movie-item"
+    data-title="Inception"
+    onclick="selectMovie('inception')">
+
+    <img
+        src="https://image.tmdb.org/t/p/w780/8IB2e4r4oVhHnTn2pL5k7aD8R3.jpg"
+        alt="Inception">
+
+</article>
+
+
+
+        <!-- #4 Spider-Man -->
+
+        <article
+            class="top-ten-card"
+            onclick="selectMovie('spiderman')">
+
+            <span class="big-number">
+                4
+            </span>
+
+
+            <div class="number-poster">
+
+                <img
+                    src="https://image.tmdb.org/t/p/w500/4q2NNj4S5dG2RLF9CpXsej7yXl.jpg"
+                    alt="Spider-Man Far From Home">
+
+            </div>
+
+        </article>
+
+
+
+        <!-- #5 One Piece -->
+
+        <article
+            class="top-ten-card"
+            onclick="selectMovie('onepiece')">
+
+            <span class="big-number">
+                5
+            </span>
+
+
+            <div class="number-poster">
+
+                <img
+                    src="https://image.tmdb.org/t/p/w500/e3NBGiAifW9Xt8xD5tpARskjccO.jpg"
+                    alt="One Piece">
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     NEW ON NETFLIX
+========================================================== -->
+
+<section class="content-section"
+         id="new">
+
+
+    <div class="section-header">
+
+        <h2>
+            New on Netflix
+        </h2>
+
+
+        <div class="section-controls">
+
+            <button onclick="scrollRow('newNetflix', -650)">
+
+                <i class="fa-solid fa-chevron-left"></i>
+
+            </button>
+
+
+            <button onclick="scrollRow('newNetflix', 650)">
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="poster-row"
+         id="newNetflix">
+
+
+        <!-- Stranger Things -->
+
+        <article
+            class="wide-card movie-item"
+            data-title="Stranger Things"
+            onclick="selectMovie('stranger')">
+
+            <img
+                src="https://image.tmdb.org/t/p/w780/oaGvjB0DvdhXhOAuADfHb261ZHa.jpg"
+                alt="Stranger Things">
+
+        </article>
+
+
+
+        <!-- Squid Game -->
+
+        <article
+            class="wide-card movie-item"
+            data-title="Squid Game"
+            onclick="selectMovie('squidgame')">
+
+            <img
+                src="https://image.tmdb.org/t/p/w780/2meX1nMdScFOoV4370rqHWKmXhY.jpg"
+                alt="Squid Game">
+
+            <div class="action-strip">
+
+                <strong>
+                    New Episode
+                </strong>
+
+                <span>
+                    Watch Now
+                </span>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- Vikings -->
+
+        <article
+            class="wide-card movie-item"
+            data-title="Vikings"
+            onclick="selectMovie('vikings')">
+
+           <img
+    src="https://i.pinimg.com/originals/ad/64/26/ad64268ddb9b2a5dca486a141c18cd65.jpg"
+    alt="Vikings">
+
+        </article>
+
+
+
+        <!-- Money Heist -->
+
+        <article
+            class="wide-card movie-item"
+            data-title="Money Heist"
+            onclick="selectMovie('moneyheist')">
+
+            <img
+                src="https://image.tmdb.org/t/p/w780/xGexTKCJDkl12dTW4YCBDXWb1AD.jpg"
+                alt="Money Heist">
+
+        </article>
+
+
+
+        <!-- Black Mirror -->
+
+        <article
+            class="wide-card movie-item"
+            data-title="Black Mirror"
+            onclick="selectMovie('blackmirror')">
+
+            <img
+                src="https://image.tmdb.org/t/p/w780/s76eYQi6hcAcOVYpVd9hofdyt11.jpg"
+                alt="Black Mirror">
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     TOP SHOWS
+========================================================== -->
+
+<section class="content-section">
+
+
+    <div class="section-header">
+
+        <h2>
+            Top 10 Shows in India Today
+        </h2>
+
+
+        <div class="section-controls">
+
+            <button onclick="scrollRow('topShows', -700)">
+
+                <i class="fa-solid fa-chevron-left"></i>
+
+            </button>
+
+
+            <button onclick="scrollRow('topShows', 700)">
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="top-ten-row"
+         id="topShows">
+
+
+        <!-- #1 Stranger Things -->
+
+        <article
+            class="top-ten-card"
+            onclick="selectMovie('stranger')">
+
+            <span class="big-number">
+                1
+            </span>
+
+            <div class="number-poster">
+
+                <img
+                    src="https://image.tmdb.org/t/p/w500/oqkld2D0qcnSNRm15rYV2883JE3.jpg"
+                    alt="Stranger Things">
+
+            </div>
+
+        </article>
+
+
+
+        <!-- #2 Squid Game -->
+
+        <article
+            class="top-ten-card"
+            onclick="selectMovie('squidgame')">
+
+            <span class="big-number">
+                2
+            </span>
+
+            <div class="number-poster">
+
+                <img
+                    src="https://image.tmdb.org/t/p/w500/dDlEmu3EZ0Pgg93K2SVNLCjCSvE.jpg"
+                    alt="Squid Game">
+
+            </div>
+
+        </article>
+
+
+
+        <!-- #3 Vikings -->
+
+        <article
+            class="top-ten-card"
+            onclick="selectMovie('vikings')">
+
+            <span class="big-number">
+                3
+            </span>
+
+            <div class="number-poster">
+
+                <img
+    src="https://i.pinimg.com/originals/ad/64/26/ad64268ddb9b2a5dca486a141c18cd65.jpg"
+    alt="Vikings">
+
+            </div>
+
+        </article>
+
+
+
+        <!-- #4 One Piece -->
+
+        <article
+            class="top-ten-card"
+            onclick="selectMovie('onepiece')">
+
+            <span class="big-number">
+                4
+            </span>
+
+            <div class="number-poster">
+
+                <img
+                    src="https://image.tmdb.org/t/p/w500/e3NBGiAifW9Xt8xD5tpARskjccO.jpg"
+                    alt="One Piece">
+
+            </div>
+
+        </article>
+
+
+
+        <!-- #5 Money Heist -->
+
+        <article
+            class="top-ten-card"
+            onclick="selectMovie('moneyheist')">
+
+            <span class="big-number">
+                5
+            </span>
+
+            <div class="number-poster">
+
+                <img
+                    src="https://image.tmdb.org/t/p/w500/reEMJA1uzscCbkpeRJeTT2bjqUp.jpg"
+                    alt="Money Heist">
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     WATER, EARTH, FIRE, AIR
+========================================================== -->
+
+<section class="content-section">
+
+
+    <div class="section-header">
+
+        <h2>
+            Water, Earth, Fire, Air
+        </h2>
+
+
+        <div class="section-controls">
+
+            <button onclick="scrollRow('elements', -650)">
+
+                <i class="fa-solid fa-chevron-left"></i>
+
+            </button>
+
+
+            <button onclick="scrollRow('elements', 650)">
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="poster-row"
+         id="elements">
+
+
+        <!-- Avatar -->
+
+        <article
+            class="wide-card movie-item"
+            data-title="Avatar The Last Airbender"
+            onclick="selectMovie('avatar')">
+
+            <img
+        src="https://image.tmdb.org/t/p/w780/9iZqv8X7kC6Y5R4T3W2Q1P0N.jpg"
+        alt="Avatar: The Last Airbender">
+
+        </article>
+
+
+
+        <!-- Stranger Things -->
+
+        <article
+            class="wide-card movie-item"
+            data-title="Stranger Things"
+            onclick="selectMovie('stranger')">
+
+            <img
+                src="https://image.tmdb.org/t/p/w780/oaGvjB0DvdhXhOAuADfHb261ZHa.jpg"
+                alt="Stranger Things">
+
+        </article>
+
+
+
+        <!-- One Piece -->
+
+        <article
+            class="wide-card movie-item"
+            data-title="One Piece"
+            onclick="selectMovie('onepiece')">
+
+            <img
+                src="https://image.tmdb.org/t/p/w780/a6ptrTUH1c5OdWanjyYtAkOuYD0.jpg"
+                alt="One Piece">
+
+        </article>
+
+
+
+        <!-- Naruto -->
+
+        <article
+            class="wide-card movie-item"
+            data-title="Naruto"
+            onclick="selectMovie('naruto')">
+
+            <img
+        src="https://image.tmdb.org/t/p/w780/vauC1cM6d8b5R3W2F0Y9X7Q4P1.jpg"
+        alt="Naruto">
+
+        </article>
+
+
+
+        <!-- Sweet Tooth -->
+
+        <article
+            class="wide-card movie-item"
+            data-title="Sweet Tooth"
+            onclick="selectMovie('sweettooth')">
+
+            <img
+                src="https://image.tmdb.org/t/p/w780/dBxxtfhC4vYrxB2fLsSxOTY2dQc.jpg"
+                alt="Sweet Tooth">
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     CONTINUE WATCHING
+========================================================== -->
+
+<section class="content-section">
+
+
+    <div class="section-header">
+
+        <h2 id="continueTitle">
+            Continue Watching
+        </h2>
+
+
+        <div class="section-controls">
+
+            <button onclick="scrollRow('continueWatching', -650)">
+
+                <i class="fa-solid fa-chevron-left"></i>
+
+            </button>
+
+
+            <button onclick="scrollRow('continueWatching', 650)">
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="poster-row"
+         id="continueWatching">
+
+
+        <!-- Stranger Things -->
+
+        <article
+            class="continue-card movie-item"
+            data-title="Stranger Things"
+            onclick="selectMovie('stranger')">
+
+            <img
+                src="https://image.tmdb.org/t/p/w780/oaGvjB0DvdhXhOAuADfHb261ZHa.jpg"
+                alt="Stranger Things">
+
+            <div class="progress-bar">
+
+                <span style="width:68%"></span>
+
+            </div>
+
+            <div class="continue-info">
+
+                <strong>
+                    Stranger Things
+                </strong>
+
+                <small>
+                    Episode 4
+                </small>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- Squid Game -->
+
+        <article
+            class="continue-card movie-item"
+            data-title="Squid Game"
+            onclick="selectMovie('squidgame')">
+
+            <img
+                src="https://image.tmdb.org/t/p/w780/2meX1nMdScFOoV4370rqHWKmXhY.jpg"
+                alt="Squid Game">
+
+            <div class="progress-bar">
+
+                <span style="width:42%"></span>
+
+            </div>
+
+            <div class="continue-info">
+
+                <strong>
+                    Squid Game
+                </strong>
+
+                <small>
+                    Episode 2
+                </small>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- Vikings -->
+
+        <article
+            class="continue-card movie-item"
+            data-title="Vikings"
+            onclick="selectMovie('vikings')">
+
+            <img
+    src="https://i.pinimg.com/originals/ad/64/26/ad64268ddb9b2a5dca486a141c18cd65.jpg"
+    alt="Vikings">
+
+            <div class="progress-bar">
+
+                <span style="width:54%"></span>
+
+            </div>
+
+            <div class="continue-info">
+
+                <strong>
+                    Vikings
+                </strong>
+
+                <small>
+                    Episode 7
+                </small>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     TODAY'S TOP PICKS
+========================================================== -->
+
+<section class="content-section">
+
+
+    <div class="section-header">
+
+        <h2>
+            Today's Top Picks for You
+        </h2>
+
+
+        <div class="section-controls">
+
+            <button onclick="scrollRow('topPicks', -650)">
+
+                <i class="fa-solid fa-chevron-left"></i>
+
+            </button>
+
+
+            <button onclick="scrollRow('topPicks', 650)">
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="poster-row"
+         id="topPicks">
+
+
+        <!-- Interstellar -->
+
+        <article
+            class="wide-card movie-item"
+            data-title="Interstellar"
+            onclick="selectMovie('interstellar')">
+
+            <img
+                src="https://image.tmdb.org/t/p/w780/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg"
+                alt="Interstellar">
+
+        </article>
+
+
+
+        <!-- Spider-Man -->
+
+        <article
+            class="wide-card movie-item"
+            data-title="Spider-Man Far From Home"
+            onclick="selectMovie('spiderman')">
+
+            <img
+                src="https://image.tmdb.org/t/p/w780/34jW8LvjRplM8Pv06cBFDpLlenR.jpg"
+                alt="Spider-Man Far From Home">
+
+        </article>
+
+
+
+        <!-- Uncharted -->
+
+        <article
+            class="wide-card movie-item"
+            data-title="Uncharted"
+            onclick="selectMovie('uncharted')">
+<img
+    src="https://i.pinimg.com/originals/ad/64/26/ad64268ddb9b2a5dca486a141c18cd65.jpg"
+    alt="Vikings">
+
+        </article>
+
+
+
+        <!-- Money Heist -->
+
+        <article
+            class="wide-card movie-item"
+            data-title="Money Heist"
+            onclick="selectMovie('moneyheist')">
+
+            <img
+                src="https://image.tmdb.org/t/p/w780/xGexTKCJDkl12dTW4YCBDXWb1AD.jpg"
+                alt="Money Heist">
+
+        </article>
+
+
+
+        <!-- Black Mirror -->
+
+        <article
+            class="wide-card movie-item"
+            data-title="Black Mirror"
+            onclick="selectMovie('blackmirror')">
+
+            <img
+                src="https://image.tmdb.org/t/p/w780/s76eYQi6hcAcOVYpVd9hofdyt11.jpg"
+                alt="Black Mirror">
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     BLOCKBUSTER ACTION
+========================================================== -->
+
+<section class="content-section">
+
+
+    <div class="section-header">
+
+        <h2>
+            Blockbuster Action
+        </h2>
+
+
+        <div class="section-controls">
+
+            <button onclick="scrollRow('actionMovies', -650)">
+
+                <i class="fa-solid fa-chevron-left"></i>
+
+            </button>
+
+
+            <button onclick="scrollRow('actionMovies', 650)">
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="poster-row"
+         id="actionMovies">
+
+
+        <!-- Spider-Man -->
+
+        <article
+            class="wide-card movie-item"
+            data-title="Spider-Man Far From Home"
+            onclick="selectMovie('spiderman')">
+
+            <img
+                src="https://image.tmdb.org/t/p/w780/34jW8LvjRplM8Pv06cBFDpLlenR.jpg"
+                alt="Spider-Man Far From Home">
+
+        </article>
+
+
+
+        <!-- Uncharted -->
+
+        <article
+            class="wide-card movie-item"
+            data-title="Uncharted"
+            onclick="selectMovie('uncharted')">
+
+            <img
+                src="https://image.tmdb.org/t/p/w780/6ZZ7D3XxUQwzJ8q5h4T2W5Vn3Y.jpg"
+                alt="Uncharted">
+
+            <div class="leaving-soon">
+                Leaving Soon
+            </div>
+
+        </article>
+
+
+
+        <!-- Interstellar -->
+
+        <article
+            class="wide-card movie-item"
+            data-title="Interstellar"
+            onclick="selectMovie('interstellar')">
+
+            <img
+                src="https://image.tmdb.org/t/p/w780/rAiYTfKGqDCRIIqo664sY9XZIvQ.jpg"
+                alt="Interstellar">
+
+        </article>
+
+
+
+        <!-- Vikings -->
+
+        <article
+            class="wide-card movie-item"
+            data-title="Vikings"
+            onclick="selectMovie('vikings')">
+
+            <img
+    src="https://i.pinimg.com/originals/ad/64/26/ad64268ddb9b2a5dca486a141c18cd65.jpg"
+    alt="Vikings">
+
+        </article>
+
+
+
+        <!-- One Piece -->
+
+        <article
+            class="wide-card movie-item"
+            data-title="One Piece"
+            onclick="selectMovie('onepiece')">
+
+            <img
+                src="https://image.tmdb.org/t/p/w780/a6ptrTUH1c5OdWanjyYtAkOuYD0.jpg"
+                alt="One Piece">
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================================
+     FOOTER
+========================================================== -->
+
+<footer>
+
+
+    <p>
+
+        Questions? Call
+
+        <a href="#">
+            000-800-919-1743
+        </a>
+
+    </p>
+
+
+    <div class="footer-grid">
+
+
+        <a href="#">
+            FAQ
+        </a>
+
+        <a href="#">
+            Help Centre
+        </a>
+
+        <a href="#">
+            Account
+        </a>
+
+        <a href="#">
+            Media Centre
+        </a>
+
+
+        <a href="#">
+            Investor Relations
+        </a>
+
+        <a href="#">
+            Jobs
+        </a>
+
+        <a href="#">
+            Ways to Watch
+        </a>
+
+        <a href="#">
+            Terms of Use
+        </a>
+
+
+        <a href="#">
+            Privacy
+        </a>
+
+        <a href="#">
+            Cookie Preferences
+        </a>
+
+        <a href="#">
+            Corporate Information
+        </a>
+
+        <a href="#">
+            Contact Us
+        </a>
+
+    </div>
+
+
+    <select>
+
+        <option>
+            English
+        </option>
+
+        <option>
+            Hindi
+        </option>
+
+    </select>
+
+
+    <p class="footer-country">
+        Netflix India
+    </p>
+
+</footer>
+
+
+
+<!-- ==========================================================
+     TRAILER MODAL
+========================================================== -->
+
+<div class="trailer-modal"
+     id="trailerModal">
+
+
+    <div class="modal-content">
+
+
+        <button class="close-modal"
+                onclick="closeTrailer()">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+
+        <iframe
+            id="modalVideo"
+            src=""
+            title="Movie Trailer"
+            allow="autoplay; encrypted-media"
+            allowfullscreen>
+        </iframe>
+
+    </div>
+
+</div>
+
+
+<!-- JavaScript -->
+
+<script src="browse.js"></script>
+
+</body>
+
+</html>
+

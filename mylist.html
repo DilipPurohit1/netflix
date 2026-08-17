@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Netflix - My List</title>
+
+<link rel="stylesheet" href="mylist.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="navbar">
+
+<div class="left">
+
+<a href="browse.html" class="logo">
+
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" alt="Netflix">
+
+</a>
+
+<ul>
+
+<li><a href="browse.html">Home</a></li>
+
+<li>TV Shows</li>
+
+<li>Movies</li>
+
+<li>New & Popular</li>
+
+<li class="active">My List</li>
+
+</ul>
+
+</div>
+
+<div class="right">
+
+<div class="search-box">
+
+<i class="fa-solid fa-magnifying-glass"></i>
+
+<input
+type="text"
+id="searchMovie"
+placeholder="Search My List">
+
+</div>
+
+<i class="fa-regular fa-bell notification"></i>
+
+<div class="profile">
+
+<img
+src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
+alt="Profile">
+
+<div class="profile-menu">
+
+<a href="browse.html">
+
+<i class="fa-solid fa-house"></i>
+
+Home
+
+</a>
+
+<a href="profile.html">
+
+<i class="fa-solid fa-user"></i>
+
+Profile
+
+</a>
+
+<hr>
+
+<a href="#" id="logout">
+
+<i class="fa-solid fa-right-from-bracket"></i>
+
+Sign Out
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</nav>
+
+<!-- ================= HEADER ================= -->
+
+<section class="header">
+
+<h1>
+
+My List
+
+</h1>
+
+<p>
+
+Movies and TV Shows you've saved for later.
+
+</p>
+
+</section>
+
+<!-- ================= MOVIES ================= -->
+
+<section class="list-section">
+
+<div id="movieGrid" class="movie-grid">
+
+<!-- Movies will be loaded here by JavaScript -->
+
+</div>
+
+<!-- Empty State -->
+
+<div id="emptyList" class="empty-list" style="display:none;">
+
+<i class="fa-regular fa-bookmark"></i>
+
+<h2>Your My List is Empty</h2>
+
+<p>
+
+Browse movies and click <strong>Add to My List</strong> to save them here.
+
+</p>
+
+<a href="browse.html" class="browse-btn">
+
+Browse Movies
+
+</a>
+
+</div>
+<!-- ================= MOVIE DETAILS MODAL ================= -->
+
+<div class="modal" id="movieModal">
+
+    <div class="modal-content">
+
+        <button class="close" id="closeModal">
+
+            <i class="fa-solid fa-xmark"></i>
+
+        </button>
+
+        <img
+            id="modalImage"
+            class="modal-image"
+            src=""
+            alt="Movie Poster">
+
+        <div class="modal-info">
+
+            <h2 id="modalTitle">
+
+                Movie Title
+
+            </h2>
+
+            <div class="movie-meta">
+
+                <span id="modalYear">2026</span>
+
+                <span>•</span>
+
+                <span id="modalGenre">Action</span>
+
+                <span>•</span>
+
+                <span id="modalDuration">2h 10m</span>
+
+                <span>•</span>
+
+                <span id="modalRating">U/A 16+</span>
+
+            </div>
+
+            <p id="modalDescription">
+
+                Movie description appears here.
+
+            </p>
+
+            <div class="modal-buttons">
+
+                <button class="play-btn">
+
+                    <i class="fa-solid fa-play"></i>
+
+                    Play
+
+                </button>
+
+                <button id="removeMovie" class="remove-btn">
+
+                    <i class="fa-solid fa-trash"></i>
+
+                    Remove from My List
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <div class="footer-links">
+
+        <a href="#">Audio Description</a>
+
+        <a href="#">Help Centre</a>
+
+        <a href="#">Gift Cards</a>
+
+        <a href="#">Media Centre</a>
+
+        <a href="#">Investor Relations</a>
+
+        <a href="#">Jobs</a>
+
+        <a href="#">Terms of Use</a>
+
+        <a href="#">Privacy</a>
+
+        <a href="#">Cookie Preferences</a>
+
+        <a href="#">Corporate Information</a>
+
+        <a href="#">Contact Us</a>
+
+        <a href="browse.html">Home</a>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        © 2026 Netflix Clone | Educational Project
+
+    </div>
+
+</footer>
+
+
+
+<script src="mylist.js"></script>
+
+</body>
+
+</html>

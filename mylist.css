@@ -1,0 +1,947 @@
+/* ==========================================
+            GLOBAL STYLES
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#141414;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+    color:white;
+}
+
+img{
+    max-width:100%;
+    display:block;
+}
+
+/* ==========================================
+                NAVBAR
+========================================== */
+
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:70px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:0 50px;
+
+    background:rgba(0,0,0,.85);
+    backdrop-filter:blur(10px);
+
+    z-index:1000;
+}
+
+.left{
+    display:flex;
+    align-items:center;
+    gap:40px;
+}
+
+.logo img{
+    width:130px;
+}
+
+.left ul{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+.left ul li{
+    cursor:pointer;
+    transition:.3s;
+}
+
+.left ul li a{
+    color:white;
+}
+
+.left ul li:hover,
+.left ul li.active{
+    color:#E50914;
+}
+
+/* ==========================================
+                RIGHT SIDE
+========================================== */
+
+.right{
+    display:flex;
+    align-items:center;
+    gap:20px;
+}
+
+.search-box{
+    display:flex;
+    align-items:center;
+    background:#222;
+    border:1px solid #444;
+    border-radius:5px;
+    padding:8px 12px;
+}
+
+.search-box input{
+    width:180px;
+    margin-left:10px;
+    border:none;
+    outline:none;
+    background:transparent;
+    color:white;
+}
+
+.search-box input::placeholder{
+    color:#aaa;
+}
+
+.notification{
+    font-size:22px;
+    cursor:pointer;
+}
+
+/* ==========================================
+            PROFILE DROPDOWN
+========================================== */
+
+.profile{
+    position:relative;
+    cursor:pointer;
+}
+
+.profile img{
+    width:40px;
+    height:40px;
+    border-radius:5px;
+}
+
+.profile-menu{
+    position:absolute;
+    top:55px;
+    right:0;
+
+    width:220px;
+
+    background:#222;
+
+    display:none;
+
+    border-radius:8px;
+
+    overflow:hidden;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.6);
+}
+
+.profile:hover .profile-menu{
+    display:block;
+}
+
+.profile-menu a{
+    display:block;
+    padding:14px 18px;
+    color:white;
+    transition:.3s;
+}
+
+.profile-menu a:hover{
+    background:#E50914;
+}
+
+.profile-menu hr{
+    border:none;
+    border-top:1px solid #444;
+}
+
+/* ==========================================
+                HEADER
+========================================== */
+
+.header{
+    margin-top:100px;
+    padding:40px 60px 20px;
+}
+
+.header h1{
+    font-size:48px;
+    margin-bottom:10px;
+}
+
+.header p{
+    color:#bbb;
+    font-size:17px;
+}
+
+/* ==========================================
+                MOVIE GRID
+========================================== */
+
+.list-section{
+    padding:20px 60px 70px;
+}
+
+.movie-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+    gap:25px;
+}
+
+.movie-card{
+    background:#1d1d1d;
+    border-radius:10px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:.35s;
+}
+
+.movie-card:hover{
+    transform:scale(1.05);
+    box-shadow:0 20px 40px rgba(0,0,0,.6);
+}
+
+.movie-card img{
+    width:100%;
+    height:320px;
+    object-fit:cover;
+}
+
+.movie-info{
+    padding:15px;
+}
+
+.movie-info h3{
+    font-size:18px;
+    margin-bottom:8px;
+}
+
+.movie-info p{
+    color:#bbb;
+    font-size:14px;
+}
+/* ==========================================
+            EMPTY LIST
+========================================== */
+
+.empty-list{
+
+    text-align:center;
+
+    padding:100px 20px;
+
+}
+
+.empty-list i{
+
+    font-size:80px;
+
+    color:#666;
+
+    margin-bottom:20px;
+
+}
+
+.empty-list h2{
+
+    font-size:34px;
+
+    margin-bottom:15px;
+
+}
+
+.empty-list p{
+
+    color:#aaa;
+
+    margin-bottom:30px;
+
+    font-size:17px;
+
+}
+
+.browse-btn{
+
+    display:inline-block;
+
+    background:#E50914;
+
+    color:white;
+
+    padding:14px 35px;
+
+    border-radius:6px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.browse-btn:hover{
+
+    background:#f6121d;
+
+    transform:scale(1.05);
+
+}
+
+
+/* ==========================================
+                MOVIE MODAL
+========================================== */
+
+.modal{
+
+    position:fixed;
+
+    inset:0;
+
+    background:rgba(0,0,0,.85);
+
+    display:none;
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:2000;
+
+}
+
+.modal-content{
+
+    width:90%;
+
+    max-width:900px;
+
+    background:#181818;
+
+    border-radius:12px;
+
+    overflow:hidden;
+
+    position:relative;
+
+    animation:popup .35s ease;
+
+}
+
+.modal-image{
+
+    width:100%;
+
+    height:420px;
+
+    object-fit:cover;
+
+}
+
+.modal-info{
+
+    padding:30px;
+
+}
+
+.modal-info h2{
+
+    font-size:36px;
+
+    margin-bottom:15px;
+
+}
+
+.movie-meta{
+
+    display:flex;
+
+    gap:12px;
+
+    color:#bbb;
+
+    margin-bottom:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.modal-info p{
+
+    color:#ddd;
+
+    line-height:1.7;
+
+    margin-bottom:30px;
+
+}
+
+
+/* ==========================================
+            MODAL BUTTONS
+========================================== */
+
+.modal-buttons{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+.play-btn{
+
+    background:white;
+
+    color:black;
+
+    border:none;
+
+    padding:14px 28px;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.play-btn:hover{
+
+    background:#ddd;
+
+}
+
+.remove-btn{
+
+    background:#E50914;
+
+    color:white;
+
+    border:none;
+
+    padding:14px 28px;
+
+    border-radius:6px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+.remove-btn:hover{
+
+    background:#c40812;
+
+}
+
+
+/* ==========================================
+                CLOSE BUTTON
+========================================== */
+
+.close{
+
+    position:absolute;
+
+    top:18px;
+
+    right:18px;
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#2a2a2a;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:20px;
+
+    transition:.3s;
+
+}
+
+.close:hover{
+
+    background:#E50914;
+
+}
+
+
+/* ==========================================
+            CARD HOVER EFFECT
+========================================== */
+
+.movie-card{
+
+    position:relative;
+
+}
+
+.movie-card::after{
+
+    content:"▶ Play";
+
+    position:absolute;
+
+    inset:0;
+
+    background:rgba(0,0,0,.75);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+    font-size:24px;
+
+    opacity:0;
+
+    transition:.3s;
+
+}
+
+.movie-card:hover::after{
+
+    opacity:1;
+
+}
+
+
+/* ==========================================
+                FOOTER
+========================================== */
+
+footer{
+
+    background:#111;
+
+    padding:50px 60px;
+
+}
+
+.footer-links{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:18px;
+
+}
+
+.footer-links a{
+
+    color:#888;
+
+    transition:.3s;
+
+}
+
+.footer-links a:hover{
+
+    color:white;
+
+}
+
+.footer-bottom{
+
+    margin-top:35px;
+
+    text-align:center;
+
+    color:#777;
+
+}
+
+
+/* ==========================================
+                ANIMATION
+========================================== */
+
+@keyframes popup{
+
+from{
+
+transform:scale(.8);
+
+opacity:0;
+
+}
+
+to{
+
+transform:scale(1);
+
+opacity:1;
+
+}
+
+}
+/* ==========================================
+            RESPONSIVE TABLET
+========================================== */
+
+@media (max-width:992px){
+
+.navbar{
+
+padding:0 25px;
+
+}
+
+.left ul{
+
+display:none;
+
+}
+
+.header{
+
+padding:30px;
+
+}
+
+.list-section{
+
+padding:20px 30px 60px;
+
+}
+
+.movie-grid{
+
+grid-template-columns:repeat(auto-fill,minmax(180px,1fr));
+
+}
+
+.modal-content{
+
+width:95%;
+
+}
+
+.modal-image{
+
+height:320px;
+
+}
+
+.footer-links{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+
+/* ==========================================
+            RESPONSIVE MOBILE
+========================================== */
+
+@media (max-width:600px){
+
+.navbar{
+
+height:65px;
+
+padding:0 15px;
+
+}
+
+.logo img{
+
+width:110px;
+
+}
+
+.search-box{
+
+display:none;
+
+}
+
+.header{
+
+padding:25px 15px;
+
+margin-top:80px;
+
+}
+
+.header h1{
+
+font-size:34px;
+
+}
+
+.header p{
+
+font-size:15px;
+
+}
+
+.list-section{
+
+padding:15px;
+
+}
+
+.movie-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+gap:15px;
+
+}
+
+.movie-card img{
+
+height:240px;
+
+}
+
+.movie-info{
+
+padding:10px;
+
+}
+
+.movie-info h3{
+
+font-size:15px;
+
+}
+
+.movie-info p{
+
+font-size:12px;
+
+}
+
+.modal-content{
+
+width:96%;
+
+}
+
+.modal-image{
+
+height:240px;
+
+}
+
+.modal-info{
+
+padding:20px;
+
+}
+
+.modal-info h2{
+
+font-size:28px;
+
+}
+
+.movie-meta{
+
+font-size:14px;
+
+}
+
+.modal-buttons{
+
+flex-direction:column;
+
+}
+
+.play-btn,
+
+.remove-btn{
+
+width:100%;
+
+}
+
+.footer{
+
+padding:40px 20px;
+
+}
+
+.footer-links{
+
+grid-template-columns:1fr;
+
+text-align:center;
+
+}
+
+}
+
+
+/* ==========================================
+            SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+background:#111;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+background:#E50914;
+
+border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+background:#ff1d25;
+
+}
+
+
+/* ==========================================
+            FADE ANIMATION
+========================================== */
+
+@keyframes fadeIn{
+
+from{
+
+opacity:0;
+
+transform:translateY(20px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+.header{
+
+animation:fadeIn .6s ease;
+
+}
+
+.movie-card{
+
+animation:fadeIn .5s ease;
+
+}
+
+.modal-content{
+
+animation:fadeIn .35s ease;
+
+}
+
+
+/* ==========================================
+            BUTTON HOVER
+========================================== */
+
+button{
+
+transition:.3s;
+
+}
+
+button:hover{
+
+transform:translateY(-2px);
+
+}
+
+
+/* ==========================================
+            ACTIVE NAV ITEM
+========================================== */
+
+.left ul li.active{
+
+color:#E50914;
+
+font-weight:600;
+
+}
+
+
+/* ==========================================
+            SEARCH FOCUS
+========================================== */
+
+.search-box input:focus{
+
+color:#fff;
+
+}
+
+
+/* ==========================================
+            IMAGE HOVER
+========================================== */
+
+.movie-card img{
+
+transition:.35s;
+
+}
+
+.movie-card:hover img{
+
+transform:scale(1.08);
+
+}
+
+
+/* ==========================================
+            END OF FILE
+========================================== */

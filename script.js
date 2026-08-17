@@ -1,69 +1,16 @@
-// =============================
-// Netflix Top 10 Carousel
-// =============================
+document.querySelectorAll(".faq-item button").forEach(btn=>{
 
-const carousel = document.getElementById("carousel");
+btn.addEventListener("click",()=>{
 
-const left = document.getElementById("left");
+const item=btn.parentElement;
 
-const right = document.getElementById("right");
+item.classList.toggle("active");
 
-// Scroll Right
-right.addEventListener("click", () => {
+const icon=btn.querySelector("i");
 
-    carousel.scrollBy({
-
-        left: 500,
-
-        behavior: "smooth"
-
-    });
+icon.classList.toggle("fa-plus");
+icon.classList.toggle("fa-xmark");
 
 });
-
-// Scroll Left
-left.addEventListener("click", () => {
-
-    carousel.scrollBy({
-
-        left: -500,
-
-        behavior: "smooth"
-
-    });
-
-});
-
-// Mouse Wheel Horizontal Scroll
-
-carousel.addEventListener("wheel", (e) => {
-
-    e.preventDefault();
-
-    carousel.scrollLeft += e.deltaY;
-
-});
-
-// Poster Hover Effect
-
-const posters = document.querySelectorAll(".movie img");
-
-posters.forEach((poster) => {
-
-    poster.addEventListener("mouseenter", () => {
-
-        poster.style.transform = "scale(1.1)";
-
-        poster.style.zIndex = "20";
-
-    });
-
-    poster.addEventListener("mouseleave", () => {
-
-        poster.style.transform = "scale(1)";
-
-        poster.style.zIndex = "5";
-
-    });
 
 });
