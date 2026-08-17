@@ -111,3 +111,13 @@ function loginUser(event) {
 
     }
 }
+window.addEventListener("DOMContentLoaded", function () {
+
+    const savedEmail = localStorage.getItem("signupEmail");
+    const signupEmail = document.getElementById("signupEmail");
+
+    if (savedEmail && signupEmail) {
+        signupEmail.value = savedEmail;
+    }
+
+});
